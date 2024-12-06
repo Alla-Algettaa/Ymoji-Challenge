@@ -1,0 +1,468 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #ffffff; 
+    color: #333;
+    padding: 12px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.navbar .logo {
+    margin-right: 20px; 
+}
+
+#logo {
+    width: 35px; 
+    height: auto;
+}
+
+.navbar ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin-left: 70px; 
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-family: 'Merriweather', serif;
+}
+
+
+.intro-section {
+    position: relative;
+    height: 100vh;
+    background-image: url('background-image.jpg'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.intro-text {
+    position: relative;
+    color: white;
+    text-align: left;
+    z-index: 2;
+    max-width: 600px;
+    padding-left: 20px;
+}
+
+#main-heading {
+    font-size: 40px;
+    font-family: 'Merriweather', serif;
+    color: #fff;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.animated-text {
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    position: relative;
+    transition: transform 1s ease-out;
+    white-space: nowrap;
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.dolphin-emoji {
+    font-size: 80px;
+    position: absolute;
+    left: -50px;
+    top: 0;
+    animation: dolphinMove 2s ease-out forwards;
+}
+
+@keyframes dolphinMove {
+    0% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(150%); opacity: 0; }
+}
+
+@keyframes textMove {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+#dolphin-container.active .animated-text {
+    animation: textMove 2s forwards;
+}
+
+.emoji-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.emoji-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 60px;
+}
+
+.emoji {
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.emoji:hover {
+    transform: scale(1.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.quote-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    text-align: center;
+    z-index: 9999;
+}
+
+.quote-modal .modal-content p {
+    margin: 10px 0;
+}
+
+.quote-modal button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+
+
+.game-section {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f0f8ff;
+    margin-top: 150px;
+
+}
+
+.game-area {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+    border: 2px solid #00A9A1;
+    background-color: #e0f7fa;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.game-item {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.game-item:hover {
+    transform: scale(1.2);
+}
+
+#start-game {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #00A9A1;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#start-game:hover {
+    background-color: #4CA3C1;
+}
+
+
+
+
+
+
+
+.emoji-section {
+    text-align: center;
+    padding: 20px;
+
+}
+
+.emoji-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+
+}
+
+.emoji {
+    font-size: 40px;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.emoji:hover {
+    transform: scale(1.2);
+}
+
+.ocean-animation {
+    position: absolute;  
+    bottom: -800px;      
+    left: 30%;           
+    transform: translateX(-50%);
+    width: 900px;       
+    z-index: 10;        
+}
+
+.ocean-animation img {
+    width: 100%;
+    height: auto;
+    z-index: 1; 
+
+}
+
+.text-container {
+    text-align: right; 
+    margin-top: 20px;
+    margin-right: 20px; 
+    display: flex;      
+    flex-direction: column; 
+    align-items: flex-end; 
+    gap: 10px;           
+}
+.text-container h2 {
+    text-align: right; 
+    font-size: 22px;    
+    margin-top: 20px;
+    margin-right: 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+#sentence-input {
+    width: 250px;
+    margin-right: 20px; 
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 2px solid #00A9A1;
+    box-sizing: border-box;
+}
+
+#convert-button {
+    padding: 15px 20px;
+    margin-right: 0; 
+
+    font-size: 18px;
+    background-color: #00A9A1;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+
+#convert-button:hover {
+    background-color: #4CA3C1;
+}
+
+#hint {
+    font-size: 14px;
+    color: #888;
+    margin-top: 10px;
+}
+
+#quote-container {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #333;
+    font-style: italic;
+    border-left: 5px solid #00A9A1;
+    padding-left: 80px;
+    margin-left: 20px;
+    line-height: 1.6;
+    font-family: 'Georgia', serif;
+}
+
+#examples {
+    font-size: 16px;
+    color: #888;
+    text-align: right;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to bottom, #68C4A6, #4CA3C1);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #fff;
+    color: #4CA3C1;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #00A9A1;
+    color: white;
+}
+
+
+.game-area {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-image: url('ocean-image.jpg'); 
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    border-radius: 10px;
+        position: relative; 
+        background-color: #f0f0f0; 
+        border: 2px solid #ccc; 
+        overflow: hidden; 
+    }
+    
+
+
+.game-item {
+    position: absolute;
+    font-size: 30px;
+    cursor: pointer;
+    transition: opacity 0.5s ease-out; 
+}
+
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    display: flex; 
+    justify-content: center;  
+    align-items: center;  
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 14px;
+    box-sizing: border-box; 
+}
+
+.footer p {
+    margin: 0;
+    text-align: center;  
+}
+
+
+
+.tips-section {
+    background-color: #f0f8f0;
+    padding: 30px;
+    text-align: center;
+}
+
+.tips-container {
+    background-color: #006F60;
+    color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.tips-container h2 {
+    font-size: 2rem;
+    font-family: 'Merriweather', serif;
+}
+
+.tips-container p {
+    font-size: 1.2rem;
+    font-family: 'Lora', serif;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+.tips-container p:first-child {
+    font-weight: 600;
+}
+
+
+

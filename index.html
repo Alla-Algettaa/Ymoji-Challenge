@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Défi Environnemental</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Merriweather&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+
+    
+
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li class="logo">
+                <img src="logo.png" alt="Logo" id="logo">
+            </li>
+
+            <li><a href="#intro-section">🏠 Accueil</a></li>
+            <li><a href="#emoji-to-emoji">🔡 Convertisseur</a></li>
+            <li><a href="#game-section">♻️ Défis écologiques</a></li>
+            <li><a href="#tips-section"> 🌊 Protection Océan</a></li>
+        </ul>
+    </nav>
+   
+    <section class="intro-section" id="intro-section">
+        <div class="overlay"></div>
+        <div class="intro-text">
+            <h1 id="main-heading">🌿 Ensemble, créons un avenir durable ! 🌍</h1>
+            <div id="dolphin-container">
+                <span id="dolphin-emoji" class="emoji">🐬</span>
+                <p id="animated-text" class="animated-text">Chaque action compte. Faites partie de notre mouvement pour un environnement plus sain.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="emoji-section">
+        <h2>Sélectionnez un emoji et découvrez la citation !</h2>
+        <div class="emoji-container">
+            <div class="emoji" data-quote="💓 L'amour est la force qui construit le monde." style="background-color: #00A9A1;">💓</div>
+            <div class="emoji" data-quote="🌬️ La respiration est le secret de la vie. La protéger est notre responsabilité." style="background-color: #4CA3C1;">🌬️</div>
+            <div class="emoji" data-quote="🦠 Les petites choses sont importantes, comme les cellules dans notre corps." style="background-color: #56B7B3;">🦠</div>
+            <div class="emoji" data-quote="🌍 La Terre est la maison où nous vivons, protégeons-la." style="background-color: #68C4A6;">🌍</div>
+        </div>
+    </section>
+
+    <section class="emoji-to-emoji" id="emoji-to-emoji">
+        <div class="ocean-animation">
+            <img src="ocean-animation1.gif" alt="Animation Océan" />
+        </div>
+        <div class="text-container">
+            <h2>Transformez votre phrase en émojis liés à l'océan! 🌊</h2>
+            <div>
+                <input type="text" id="sentence-input" placeholder="Entrez votre phrase">
+                <button id="convert-button">🔄</button>
+            </div>
+            <p id="examples">Exemples de mots : mer, poisson, plage, océan, soleil, etc.</p>
+            <!-- Section for Emoji Result -->
+            <div id="emoji-output-container">
+                <p id="emoji-output"></p>
+            </div>
+            <div id="quote-container">
+                <p id="quote"></p>
+            </div>
+            
+            <p id="hint"></p> <!-- Suggestions for autocomplete -->
+        </div>
+    </section>
+    
+    
+    <div id="quote-modal" class="quote-modal">
+        <div class="modal-content">
+            <p id="quote-text">Aucun emoji sélectionné, aucune citation disponible.</p>
+            <button onclick="closeModal()">Fermer</button>
+        </div>
+    </div>
+
+
+
+    <section class="game-section" id="game-section">
+        <h2>🌟 Défi de Sauver la Planète 🌟</h2>
+        <p>Attrapez les objets qui polluent l'océan et gagnez des points ! 🕒</p>
+        <div class="game-area" id="gameArea">
+        </div>
+        <p>Points : <span id="score">0</span></p>
+        <button id="start-game" class="start-button">Commencer le jeu</button>
+    </section>
+    
+    
+    <section class="tips-section" id="tips-section">
+        <div class="tips-container">
+            <h2>🌊 Protégeons notre océan et ses habitants 🐠</h2>
+            <p>Le nettoyage de nos océans est essentiel pour préserver la biodiversité marine. Chaque geste compte, et ensemble, nous pouvons contribuer à un environnement plus sain. Protégeons les espèces marines et leur habitat, car ils sont essentiels à l'équilibre de notre planète. 🌍</p>
+            <p>Les océans couvrent 71% de la Terre, ils régulent notre climat et sont la source de vie pour des millions d'espèces. Agissons maintenant pour un avenir plus propre et plus durable. 🌱</p>
+        </div>
+    </section>
+
+    
+
+    <footer>
+    </footer>
+    
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
